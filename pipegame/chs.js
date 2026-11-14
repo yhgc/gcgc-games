@@ -5,8 +5,10 @@
  @version : V0.0.1 - 2026-11-07
  @website : http://www.g8hh.com
 
- 容量增加：player.maxGens = 60
- 钱增加：player.money = D("7e30") 一旦使用直接死档，仅用于翻译
+ 原评论：
+ 可以用分成两分并加分,使三角形(我在其机器中得分超过1e14,而屏幕上可以显示的三角形数量则受限)并增加数值(A6)。
+ T6 + 分体式转换器 = 无限三角形生成器
+ 我刚刚完成了一座漂亮的V1-V8三角动力工厂,这需要许多分体式改造,并拥有一条漫长的三角之路。满意且满意,我看看即将到来的升级,它又说了什么?删除所有V1-V8三角形,因为它们现已过时。
 */
 
 //1.汉化杂项
@@ -44,7 +46,7 @@ var cnItems = {
     '(Requires ▲5) Sells ■ for x250 money. Sell for x1 if there is not enough ▲. (Tier T1)':'(需要 ▲ 5)出售 ■ x250 金钱。如果 ▲ 不足，出售为 x1。（T1 级）',
     '(▲500) Sells ■ for x2,500 money. Sell for x100 if there is not enough ▲. (Tier T2)':'(▲ 500)出售 ■ x2500 金钱。如果 ▲ 不足，出售为 x100。（T2 级）',
     '(▲1,000) Sells ■ for x10,000 money if they have no effects. Sell for x250 if there is not enough ▲ OR the chunk has ANY effects. (Tier T3)':'(▲ 1,000)出售 ■ x10,000 金钱，如果它们没有效果。如果 ▲ 不足，或者块具有任何效果，出售为 x250。（T3 级）',
-    '(▲1.00e6) Sells ■ for x50,000 money. Sell for x2,500 if there is not enough ▲. (Tier T4)':'(▲ 1.00e6)出售 ■ x50k 金钱。如果 ▲ 不足，出售为 x2500。（T2 级）',
+    '(▲1.00e6) Sells ■ for x50,000 money. Sell for x2,500 if there is not enough ▲. (Tier T4)':'(▲ 1.00e6)出售 ■ x50k 金钱。如果 ▲ 不足，出售为 x2500。（T4 级）',
 
     'Moves chunks at x1 speed permanently. (Tier 1)': '以 x1 速度永久移动块。（1 级）',
     'Moves chunks at x2 speed permanently. (Tier 2)': '以 x2 速度永久移动块。（2 级）',
@@ -127,8 +129,19 @@ var cnItems = {
     'here i gooooooooo..........': '那我上啦啊啊啊啊啊啊……',
 
     'Dark Mode': '暗色模式',
+    'Dark Mode:': '暗色模式：',
     'Live Analysis Update': '实时分析更新器',
+    'Live Analysis Update:': '实时分析更新：',
     'Mobile Controls': '移动控制',
+    'Mobile Controls:': '移动控制：',
+    'Unpause': '继续',
+    '+10 Shards': '+10 碎片',
+    'x2 Shards': '碎片 x2',
+    'DEL': '删',
+    'MERGE': '合并',
+    'SOLD': '已售',
+    'WASTE': '浪费',
+    'Are you sure you want to delete your save?': '确定要删除存档吗？',
     'Delete Save': '删除保存',
     'Pause': '暂停',
     'Export': '导出',
@@ -146,15 +159,6 @@ var cnItems = {
     'Removes Nubert': '删除 Nubert',
     'New Blocks': '新块',
     'Decor Items': '装饰物品',
-
-
-
-
-    '': '',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
 };
 
 //需处理的前缀
@@ -207,4 +211,12 @@ var cnRegReplace = new Map([
     [/^Level (\d+) Tree Spawn$/, '$1 级树刷新'],
     [/^(\d+) New Blocks$/, '$1 新块'],
     [/^(\d+) Decor Items$/, '$1 装饰物品'],
+    [/^Zoom level: ([\d\.]+)$/, '缩放：$1'],
+    [/^Approx\. of (\d+) ▲$/, '约 $1 个 ▲'],
 ]);
+
+/*
+ 容量增加：player.maxGens = 60
+ 钱增加：player.money = D("7e30") 一旦使用直接死档，仅用于翻译
+
+*/

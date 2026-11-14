@@ -151,6 +151,10 @@ function TransSubTextNode(node) {
         cnPatchNode(child);
         return ret;
     };
+    var _confirm = window.confirm;
+    window.confirm = function (msg) {
+        return _confirm.call(window, cnItem(String(msg)));
+    };
 
     let observer_config = { attributes: false, characterData: true, childList: true, subtree: true };
     let targetNode = document.body;
