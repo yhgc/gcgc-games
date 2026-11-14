@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<!-- free space counter script: world.reduce((a,b)=>a+b.reduce((c,d)=>c+(d.id.includes("bert")||d.id=="nothing"),0),0) -->
+
+<!--
+pipegame,
+
+a game by Yhvr,
+with significant contributions from Scar1337.
+
+special thanks to (in no particular order):
+alez,
+æxpērïmêñt tw3n7y,
+CoolRadGamer,
+downvoid,
+Fishydids,
+Flamemaster,
+foxes1338,
+Lebossle,
+NoHaxJustPi,
+randomtuba,
+Scar1337,
+The Opposum,
+TheMKeyHolder,
+ThePaperPilot,
+TheTastyPi,
+TrueDiegeo,
+water,
+WebFloor,
+yahtzee,
+u/salbris.
+
+Thank you all! <3
+-->
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta id="viewport-meta" name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+		<title>pipegame</title>
+
+		<meta
+			name="description"
+			content="A webgame inspired by Miner's Haven. Build up a factory and try to make as much money as possible!"
+		/>
+		<meta name="color-scheme" content="dark" />
+		<meta
+			name="keywords"
+			content="incremental, idle, game, miners haven, yhvr"
+		/>
+		<meta name="author" content="Yhvr" />
+
+		<meta content="Pipegame" property="og:title" />
+		<meta
+			content="A webgame inspired by Miner's Haven. Build up a factory and try to make as much money as possible!"
+			property="og:description"
+		/>
+		<meta content="https://yhvr.me/pipegame/" property="og:url" />
+		<meta
+			content="https://yhvr.me/pipegame/img/thumb.png"
+			property="og:image"
+		/>
+		<meta content="#ff8888" data-react-helmet="true" name="theme-color" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+
+		<link href="img/favicon.ico" rel="icon" />
+
+		<script src="core.js"></script>
+		<script src="chs.js"></script>
+		<script src="js/utils/polyfills.js"></script>
+
+		<script src="js/lib/break-eternity.js"></script>
+		<script src="js/utils/extensions.js"></script>
+
+		<script src="js/preload.js"></script>
+
+		<script src="js/data/conveyor.js" defer></script>
+		<script src="js/data/furnai.js" defer></script>
+		<script src="js/data/gens.js" defer></script>
+		<script src="js/data/shop.js" defer></script>
+		<script src="js/data/upgrade.js" defer></script>
+
+		<script src="js/format.js" defer></script>
+		<script src="js/tooltips.js" defer></script>
+		<script src="js/shop.js" defer></script>
+		<script src="js/player.js" defer></script>
+		<script src="js/block.js" defer></script>
+		<script src="js/chunks.js" defer></script>
+		<script src="js/upgrade.js" defer></script>
+		<script src="js/rebirth.js" defer></script>
+		<script src="js/analysis.js" defer></script>
+		<script src="js/particles.js" defer></script>
+		<script src="js/sidebar.js" defer></script>
+		<script src="js/index.js" defer></script>
+		<script src="js/img.js" defer></script>
+		<script src="js/canvas.js" defer></script>
+		<script src="js/canvas-util.js" defer></script>
+		<script src="js/interface/interface.js" defer></script>
+		<script src="js/interface/data/board.js" defer></script>
+		<script src="js/interface/data/sidebar/templates/paginator.js" defer></script>
+		<script src="js/interface/data/top.js" defer></script>
+		<script src="js/interface/data/sidebar/sidebar.js" defer></script>
+		<script src="js/interface/data/bottom.js" defer></script>
+		<script src="js/interface/data/sidebar/shop-tab.js" defer></script>
+		<script src="js/interface/data/sidebar/rebirth-tab.js" defer></script>
+		<script src="js/interface/data/sidebar/anal-tab.js" defer></script>
+		<script src="js/interface/data/settings-tab.js" defer></script>
+		<script src="js/interface/data/controls-tab.js" defer></script>
+		<script src="js/interface/data/info-bar.js" defer></script>
+		<script src="js/control.js" defer></script>
+		<script src="js/loop.js" defer></script>
+
+		<script src="js/save.js" defer></script>
+
+		<link rel="stylesheet" href="style.css" />
+		<link rel="manifest" href="manifest.json" />
+	</head>
+	<body>
+
+		<div id="canvas-container">
+			<canvas id="canvas" width="840" height="660"></canvas>
+			<div id="text">
+				<div id="mobile-controls">
+					<!-- Not so walmart mobile controls -->
+					<button onclick="interactWithBoard(boardX, boardY)">
+						<img src="img/move.png" alt="Move" class="l-mobile-controls--space" id="mobile-interact" />
+					</button>
+					<div class="l-mobile-controls--space"></div>
+					<button onclick="rotate(true)">
+						<img src="img/r-ccw.png" alt="Rotate anticlockwise" class="l-mobile-controls--space" id="mobile-rotate-ccw" />
+					</button>
+					<div class="l-mobile-controls--space"></div>
+					<button onclick="rotate()">
+						<img src="img/r-cw.png" alt="Rotate" class="l-mobile-controls--space" id="mobile-rotate-cw" />
+					</button>
+					<div class="l-mobile-controls--space"></div>
+					<button onclick="deleteBlock()">
+						<img src="img/trashcan.png" alt="Delete" class="l-mobile-controls--space" id="mobile-delete" />
+					</button>
+					<div class="l-mobile-controls--space"></div>
+					<button onclick="mobileShowTooltip = !mobileShowTooltip">
+						<img src="img/info-icon.png" alt="Info" class="l-mobile-controls--space" id="mobile-delete" />
+					</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

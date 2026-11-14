@@ -1,0 +1,70 @@
+body {
+	overflow: hidden;
+	background-color: #888;
+}
+
+body.s-base--dark {
+	background-color: #222;
+}
+
+#canvas-container {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+canvas {
+	transition: 10s filter;
+}
+
+button {
+	background-color: #666;
+	color: #fff;
+	border: 2px solid;
+}
+
+.s-base--dark button {
+	background-color: #222;
+}
+
+#text {
+	transition: 5s opacity;
+}
+
+#mobile-controls {
+	display: flex;
+	position: absolute;
+	bottom: 5px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1;
+	user-select: none;
+	pointer-events: none;
+}
+
+#mobile-controls button {
+	padding: 0;
+	background: linear-gradient(#aaab 40%, #888b 60%);
+	pointer-events: auto;
+}
+
+.l-mobile-controls--space {
+	width: var(--block-width);
+	height: var(--block-height);
+}
+
+.lore {
+	transition: 5s opacity !important;
+	opacity: 0;
+
+	position: absolute;
+	top: 50vh;
+	left: 50vw;
+	transform: translate(-50%, -50%);
+	font-size: 50px;
+	color: black;
+	background: none;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	pointer-events: none;
+}
